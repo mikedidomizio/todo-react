@@ -18,6 +18,7 @@ jobs:
 
   # todo normally we'd only deploy on master
   build-and-deploy:
+    needs: testing
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
