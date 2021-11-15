@@ -18,6 +18,11 @@ jobs:
           command: "npm run percy"
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+      - name: Save video artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: todo.test.js.mp4
+          path: cypress/videos/testing/todo.test.js.mp4
 
   # todo normally we'd only deploy on master
   build-and-deploy:
