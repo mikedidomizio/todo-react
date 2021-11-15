@@ -19,7 +19,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "cypress": "cypress run",
-    "percy": "concurrently --kill-others \"BROWSER=none npm run start\" \"percy exec -- cypress run\"",
+    "percy": "concurrently --kill-others --success first \"BROWSER=none npm run start\" \"npm run cypress\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

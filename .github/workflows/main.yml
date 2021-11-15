@@ -12,9 +12,12 @@ jobs:
         run: |
           npm install
 
-      - name: Run Percy
-        run: |
-          npm run percy
+      - name: Percy Test
+        uses: percy/exec-action@v0.3.1
+        with:
+          command: "npm run percy"
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
   # todo normally we'd only deploy on master
   build-and-deploy:
