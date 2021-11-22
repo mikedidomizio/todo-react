@@ -15,5 +15,6 @@ module.exports = {
     ],
     // set batch name to the configuration
     batchName: 'Todo App',
-    showLogs: false
+    showLogs: false,
+    ignoreDisplacements: true,
 }
