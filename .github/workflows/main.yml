@@ -1,10 +1,10 @@
 name: Build and Deploy
 on: [push]
 jobs:
-  testing:
+  testing-percy:
     runs-on: ubuntu-latest
     steps:
-      # todo ideally we'd save dependencies
+      # todo ideally we'd cache dependencies
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
@@ -12,34 +12,33 @@ jobs:
         run: |
           npm install
 
-      - name: Percy Test
+      - name: Percy Test 🦔
         uses: percy/exec-action@v0.3.1
         with:
-          command: "npm run percy"
+          command: "npm run test:percy"
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+
       - name: Save video artifact
         uses: actions/upload-artifact@v2
         with:
-          name: todo.test.js.mp4
-          path: cypress/videos/testing/todo.test.js.mp4
+          # the same could be done with applitools
+          name: todo.percy.test.js.mp4
+          path: cypress/videos/testing/todo.percy.test.js.mp4
 
-  # todo normally we'd only deploy on master
-  build-and-deploy:
-    needs: testing
+  testing-applitools:
     runs-on: ubuntu-latest
     steps:
+      # todo ideally we'd cache dependencies
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
       - name: Install and Build 🔧
         run: |
           npm install
-          npm run build
 
-      - name: Deploy 🚀
+      - name: Applitools Test 👁️
         run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/mikedidomizio/todo-react.git
-          npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
+          npm run test:applitools
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}

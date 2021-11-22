@@ -105,7 +105,7 @@ function App(props) {
         {filterList}
       </div>
       <h2 id="list-heading" tabIndex="-1" ref={listHeadingRef}>
-        {headingText}  {filter === 'All' && 'All tasks!'}
+        {headingText}
       </h2>
       <ul
         className="todo-list stack-large stack-exception"
