@@ -1,5 +1,7 @@
 # todo-react with visual regression testing
 
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/617adf68/todo-react)
+
 todo app written with React, forked from [here](https://github.com/mdn/todo-react).
 
 This fork includes visual regression testing using [Cypress](https://www.cypress.io/)
