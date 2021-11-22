@@ -13,8 +13,9 @@ jobs:
           npm install
 
       - name: Percy Test 🦔
-        run: |
-          npm run test:percy
+        uses: percy/exec-action@v0.3.1
+        with:
+          command: "npm run test:percy"
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
