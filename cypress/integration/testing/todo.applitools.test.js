@@ -35,10 +35,10 @@ describe('My app', () => {
 
     it('should only show completed tasks', () => {
         cy.get('.btn').contains('Completed').click();
-        cy.eyesCheckWindow({
-            tag: "completed tasks",
-            target: 'window',
-            fully: true
-        });
+        // cy.eyesCheckWindow({
+        //     tag: "completed tasks",
+        //     target: 'window',
+        //     fully: true
+        // });
     });
 });

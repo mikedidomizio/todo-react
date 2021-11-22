@@ -14,6 +14,6 @@ describe('My app', () => {
 
   it('should only show completed tasks', () => {
     cy.get('.btn').contains('Completed').click();
-    cy.percySnapshot('completed tasks')
+    // cy.percySnapshot('completed tasks')
   });
 });
