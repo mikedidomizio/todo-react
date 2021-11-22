@@ -90,8 +90,8 @@ body {
 }
 .btn__danger {
   color: #fff;
-  background-color: #ca3c3c;
-  border-color: red;
+  background-color: red;
+  border-color: #bd2130;
 }
 .btn__filter {
   border-color: lightgrey;
