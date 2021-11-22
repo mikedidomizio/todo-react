@@ -12,12 +12,12 @@ jobs:
         run: |
           npm install
 
-      - name: Percy Test
-        uses: percy/exec-action@v0.3.1
-        with:
-          command: "npm run test:percy"
+      - name: Percy Test 🦔
+        run: |
+          npm run test:percy
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+
       - name: Save video artifact
         uses: actions/upload-artifact@v2
         with:
@@ -36,9 +36,8 @@ jobs:
         run: |
           npm install
 
-      - name: Applitools Test
-        uses: percy/exec-action@v0.3.1
-        with:
-          command: "npm run test:applitools"
+      - name: Applitools Test 👁️
+        run: |
+          npm run test:applitools
         env:
           APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
