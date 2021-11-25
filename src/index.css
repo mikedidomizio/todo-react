@@ -269,6 +269,11 @@ body {
   border: 2px solid currentColor;
   background: transparent;
 }
+
+.btn, .c-cb > label::before {
+  border: 2px solid #CCC;
+}
+
 .c-cb > input[type="checkbox"]:focus + label::before {
   border-width: 4px;
   outline: 3px dashed #228bec;
@@ -289,5 +294,5 @@ body {
   background: transparent;
 }
 .c-cb > input[type="checkbox"]:checked + label::after {
-  opacity: 1;
+  /*opacity: 1;*/
 }
