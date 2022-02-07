@@ -20,7 +20,7 @@
     "deploy": "gh-pages -d build",
     "cypress:open": "cypress open",
     "applitools": "cypress run --spec \"cypress/integration/testing/todo.applitools.test.js\"",
-    "percy": "cypress run --spec \"cypress/integration/testing/todo.percy.test.js\"",
+    "percy": "percy exec -- cypress run --spec \"cypress/integration/testing/todo.percy.test.js\"",
     "test:applitools": "concurrently --kill-others --success first \"BROWSER=none npm run start\" \"npm run applitools\"",
     "test:percy": "concurrently --kill-others --success first \"BROWSER=none npm run start\" \"npm run percy\"",
     "start": "react-scripts start",
