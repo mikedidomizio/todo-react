@@ -4,8 +4,8 @@
 
 todo app written with React, forked from [here](https://github.com/mdn/todo-react).
 
-This fork includes visual regression testing using [Cypress](https://www.cypress.io/)
-and integrations with [Percy](https://percy.io/) and [Applitools](https://applitools.com) which are visual regression tools.
+This fork includes visual regression testing using [Cypress](https://www.cypress.io/) / [Nightwatch](https://nightwatchjs.org/)
+and integrations with [Percy](https://percy.io/) and [Applitools](https://applitools.com) which are tools that provide visual regression testing.
 
 Creating a pull request in GitHub will run jobs to test and push to these tools.
 Requires both an `APPLITOOLS_API_KEY` and `PERCY_TOKEN` otherwise the build will fail.
@@ -26,8 +26,4 @@ You will also see any lint errors in the console.
 
 ### Running the visual regression tests locally
 
-Run the local server, then you can run (with the environment variables set)
-
-`npm run percy`
-
-`npm run applitools`
+Refer to the scripts in the [package.json](package.json) file

@@ -4,3 +4,4 @@
 /build/
 
 cypress/videos/
+tests_output
