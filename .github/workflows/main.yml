@@ -15,7 +15,7 @@ jobs:
       - name: Percy Test 🦔
         uses: percy/exec-action@v0.3.1
         with:
-          command: "npm run test:percy"
+          command: "npm run test:start:cypress:percy"
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
@@ -39,6 +39,6 @@ jobs:
 
       - name: Applitools Test 👁️
         run: |
-          npm run test:applitools
+          npm run test:start:cypress:applitools
         env:
           APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
